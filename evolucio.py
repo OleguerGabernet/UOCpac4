@@ -14,4 +14,4 @@ def top_average_column(data: dict, identifier: str, col: str, threshold: int) ->
                              {'value': columns_dict[col], 'year': columns_dict['year']})
             tuple_list.append(tuple_element)
     tuple_list.sort(key=lambda tup: tup[1], reverse=True)
-    return tuple_lis
+    return tuple_list
