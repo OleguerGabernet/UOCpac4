@@ -5,7 +5,7 @@ import pandas as pd
 
 def read_add_year_gender(filepath: str, gender: str, year: int) -> pd.DataFrame:
     """
-    Loads the file
+    Loads the file with a specific gender and year
     """
     df_gender_year = pd.read_csv(filepath, low_memory=False)
     return df_gender_year.assign(**{'gender':gender, 'year':year})
@@ -13,7 +13,7 @@ def read_add_year_gender(filepath: str, gender: str, year: int) -> pd.DataFrame:
 
 def join_male_female(path: str, year: int) -> pd.DataFrame:
     """
-    Loads the file
+    Loads the both female and male files for a particular year
     """
     year_suffix = str(year%100)
     # read csv files
@@ -29,7 +29,7 @@ def join_male_female(path: str, year: int) -> pd.DataFrame:
 
 def join_datasets_year(path: str, years: list) -> pd.DataFrame:
     """
-    Loads the file
+    Loads the files for all years listed and all genders
     """
     # read the first year data
     df_1 = join_male_female(path, years.pop(0))

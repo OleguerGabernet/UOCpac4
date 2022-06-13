@@ -1,5 +1,5 @@
 """
-Basic statistics
+Data frame filters
 """
 from numbers import Number
 import pandas as pd
@@ -7,7 +7,7 @@ from pandas.api.types import is_string_dtype, is_numeric_dtype
 
 
 def find_max_col(df_in: pd.DataFrame, filter_col: str, cols_to_return: list) -> pd.DataFrame:
-    """max col"""
+    """Finds the maxium value for a column"""
     return df_in.loc[df_in[filter_col] == df_in[filter_col].max(), cols_to_return]
 
 

@@ -1,11 +1,11 @@
-"""dictionaries"""
+"""Library containing dictionaries generator, cleaner and analyzer"""
 from itertools import chain
 import pandas as pd
 import numpy as np
 
 
 def players_dict(df_in: pd.DataFrame, id_list: list, cols_list: list) -> dict:
-    """dict"""
+    """Generates a dictionary from a Dataframe"""
     df_in = df_in.set_index('sofifa_id')
     df_in = df_in.loc[df_in.index.isin(id_list), cols_list]
     df_in = df_in.groupby('sofifa_id', as_index='False').agg(list)
@@ -13,7 +13,7 @@ def players_dict(df_in: pd.DataFrame, id_list: list, cols_list: list) -> dict:
 
 
 def clean_up_players_dict(player_dict: dict, col_query: list) -> dict:
-    """clean dict"""
+    """Cleans specified repeated values from a dictionary"""
     for key, col_dict in player_dict.items():
         for col_change in col_query:
             if col_change[1] == 'one':
@@ -27,7 +27,7 @@ def clean_up_players_dict(player_dict: dict, col_query: list) -> dict:
     return player_dict
 
 def top_average_column(data: dict, identifier: str, col: str, threshold: int) -> list:
-    """top average"""
+    """Get a lists of tuples of the top average performers on a specified attribute"""
     tuple_list = []
     for columns_dict in data.values():
         if len(columns_dict['year']) >= threshold and not np.isnan(columns_dict[col]).any():
