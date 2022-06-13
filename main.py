@@ -50,21 +50,21 @@ X_POS = np.arange(len(X_VALUES))
 
 plt.bar(X_POS, Y_VALUES)
 
-plt.xticks(X_POS, X_VALUES, rotation=90, fontsize=30)
+plt.xticks(X_POS, X_VALUES, rotation=90, fontsize=10)
 
-plt.yticks(fontsize=30)
+plt.yticks(fontsize=10)
 
-plt.axhline(y=18.5, color='g', linestyle='-', linewidth=5)
+plt.axhline(y=18.5, color='g', linestyle='-', linewidth=2)
 
-plt.axhline(y=25, color='b', linestyle='-', linewidth=5)
+plt.axhline(y=25, color='b', linestyle='-', linewidth=2)
 
-plt.axhline(y=30, color='r', linestyle='-', linewidth=5)
+plt.axhline(y=30, color='r', linestyle='-', linewidth=2)
 
-plt.rcParams["figure.figsize"] = (30, 30)
+plt.rcParams["figure.figsize"] = (20, 20)
 plt.title("""BMI per país de jugadors masculins al 2022.\n
-Les línies divideixen baix pes, pes normal, sobrepes i obès""", fontsize=30)
-plt.ylabel('BMI', fontsize=30)
-plt.xlabel('Nacionalitat', fontsize=30)
+Les línies divideixen baix pes, pes normal, sobrepes i obès""", fontsize=10)
+plt.ylabel('BMI', fontsize=10)
+plt.xlabel('Nacionalitat', fontsize=10)
 plt.show()
 
 print("""Els resultats són curiosos, hem agafat el màxim de BMI i pràcticament totes\n

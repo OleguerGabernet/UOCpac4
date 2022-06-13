@@ -1,6 +1,7 @@
 # Environments
 venv/
 venvJupyter/
+venvWin/
 #UOCpac4 project specific
 *.pdf
 reports/
