@@ -17,8 +17,12 @@ def join_male_female(path: str, year: int) -> pd.DataFrame:
     """
     year_suffix = str(year%100)
     # read csv files
-    female_data = read_add_year_gender(os.path.join(path, f'female_players_{year_suffix}.csv'), 'F', year)
-    male_data = read_add_year_gender(os.path.join(path, f'players_{year_suffix}.csv'), 'M', year)
+    female_data = read_add_year_gender(os.path.join(path, f'female_players_{year_suffix}.csv'),
+                                       'F',
+                                       year)
+    male_data = read_add_year_gender(os.path.join(path, f'players_{year_suffix}.csv'),
+                                     'M',
+                                     year)
     # union both dataFrames
     return pd.concat([female_data, male_data], ignore_index=True)
 

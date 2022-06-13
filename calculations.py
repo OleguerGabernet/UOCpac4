@@ -2,7 +2,10 @@
 import statistics
 import pandas as pd
 
-def calculate_bmi(df_in: pd.DataFrame, gender: str, year: int, cols_to_return: list) -> pd.DataFrame:
+def calculate_bmi(df_in: pd.DataFrame,
+                  gender: str,
+                  year: int,
+                  cols_to_return: list) -> pd.DataFrame:
     """calculates bmi"""
     query = (['gender', 'year'], [gender, (year, year)])
     cols_query_return = [*cols_to_return, 'weight_kg', 'height_cm']
@@ -16,5 +19,5 @@ def calculate_nationality(df_in: pd.DataFrame) -> pd.DataFrame:
     """calculates nationality"""
     nat = 'nationality'
     df_in[nat] = df_in.apply(lambda row: str(row['club_flag_url']).split('/')[-1].split('.')[0],
-                           axis=1)
+                             axis=1)
     return df_in
