@@ -1,6 +1,6 @@
 """Module providingFunction printing python version."""
-import pandas as pd
 import os
+import pandas as pd
 
 
 def read_add_year_gender(filepath: str, gender: str, year: int) -> pd.DataFrame:
