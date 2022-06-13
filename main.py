@@ -1,15 +1,11 @@
 """
 Main script for the analysis
 """
-import statistics
 import pprint
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import calculations
-import data_loader
-import dict_tools
-import evolucio
+from utils import calculations, data_loader, dict_tools, frame_filters
 
 #==================
 # Ex1
@@ -26,14 +22,14 @@ COLUMNS = ['short_name', 'year', 'age', 'overall', 'potential']
 print("""\n\nJugadors de nacionalitat belga menors de 25 anys
 amb màxim “potential” al futbol masculí:\n""")
 QUERY = (['gender', 'nationality_name', 'age'], ['M', 'Belgium', (0, 24)])
-QUERY_RESULT = statistics.find_rows_query(DATA, QUERY, COLUMNS)
-print(statistics.find_max_col(QUERY_RESULT, 'potential', COLUMNS))
+QUERY_RESULT = frame_filters.find_rows_query(DATA, QUERY, COLUMNS)
+print(frame_filters.find_max_col(QUERY_RESULT, 'potential', COLUMNS))
 
 # Query 2:
 print("""\n\nPorteres majors de 28 anys amb “overall” superior
 a 85 al futbol femení:\n""")
 QUERY = (['gender', 'player_positions', 'age', 'overall'], ['F', 'GK', (28, 100), (85, 100)])
-print(statistics.find_rows_query(DATA, QUERY, COLUMNS))
+print(frame_filters.find_rows_query(DATA, QUERY, COLUMNS))
 
 #==================
 # Ex3

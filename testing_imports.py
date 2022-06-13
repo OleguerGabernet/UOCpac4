@@ -1,8 +1,7 @@
 # pylint: skip-file
 # Poned aquí los imports de las funciones que hay que testear.
 import os
-from data_loader import *
-from statistics import *
-from calculations import *
-from dict_tools import *
-from evolucio import *
+from utils.data_loader import *
+from utils.frame_filters import *
+from utils.calculations import *
+from utils.dict_tools import *
