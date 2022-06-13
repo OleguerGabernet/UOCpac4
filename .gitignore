@@ -1,6 +1,6 @@
 # Environments
 venv/
-
+venvJupyter/
 #UOCpac4 project specific
 *.pdf
 reports/
