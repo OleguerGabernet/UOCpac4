@@ -1,6 +1,7 @@
 """dictionaries"""
 from itertools import chain
 import pandas as pd
+import numpy as np
 
 
 def players_dict(df_in: pd.DataFrame, id_list: list, cols_list: list) -> dict:

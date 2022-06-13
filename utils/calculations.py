@@ -1,5 +1,5 @@
 """calculations module"""
-import statistics
+import frame_filters
 import pandas as pd
 
 def calculate_bmi(df_in: pd.DataFrame,
@@ -9,7 +9,7 @@ def calculate_bmi(df_in: pd.DataFrame,
     """calculates bmi"""
     query = (['gender', 'year'], [gender, (year, year)])
     cols_query_return = [*cols_to_return, 'weight_kg', 'height_cm']
-    result = statistics.find_rows_query(df_in, query, cols_query_return)
+    result = frame_filters.find_rows_query(df_in, query, cols_query_return)
     result['BMI'] = result.apply(lambda row: row['weight_kg']/pow(row['height_cm']/100, 2), axis=1)
     cols_to_return.append('BMI')
     return result[cols_to_return]

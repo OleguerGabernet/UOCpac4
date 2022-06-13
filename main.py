@@ -102,7 +102,7 @@ QUERY = [("short_name", "one")]
 
 DICT_E5_CLEAN = dict_tools.clean_up_players_dict(DICT_E5, QUERY)
 
-TOP_AVERAGE_SPRINT_SPEEDSTERS = evolucio.top_average_column(DICT_E5_CLEAN,
+TOP_AVERAGE_SPRINT_SPEEDSTERS = dict_tools.top_average_column(DICT_E5_CLEAN,
                                                             'short_name',
                                                             'movement_sprint_speed', 2)
 
