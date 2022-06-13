@@ -4,3 +4,5 @@ import os
 from data_loader import *
 from statistics import *
 from calculations import *
+from dict_tools import *
+from evolucio import *
